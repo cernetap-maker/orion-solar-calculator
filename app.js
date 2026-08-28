@@ -142,7 +142,6 @@ function renderHours(i) {
 
 function renderResult() {
     let totalWh = 0;
-    const items = [];
     const list = document.getElementById("result-list");
     list.innerHTML = "";
 
@@ -151,7 +150,6 @@ function renderResult() {
         const h = hours[idx];
         const wh = watts * h;
         totalWh += wh;
-        items.push({ name, watts, hours: h });
 
         const el = document.createElement("div");
         el.className = "dev-item";
@@ -167,14 +165,8 @@ function renderResult() {
         `<b>Загальна потреба: ${(totalWh / 1000).toFixed(2)} кВт·год</b><br>
          <span style="color:var(--hint)">Розрахунок виконано за середніми показниками приладів. Для точного підбору зверніться до наших менеджерів.</span>`;
 
-    window.__resultItems = items;
     show("result");
 }
-
-document.getElementById("btn-send").addEventListener("click", () => {
-    tap();
-    if (tg) tg.sendData(JSON.stringify(window.__resultItems));
-});
 
 document.getElementById("btn-channel").addEventListener("click", () => {
     tap();
