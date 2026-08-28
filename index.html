@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Orion Solar</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<div class="app">
+
+  <section id="screen-intro" class="screen">
+    <div class="logo">🌞</div>
+    <h2>Orion Solar</h2>
+    <p>Підберемо обладнання під ваші потреби. Виберіть пристрої та вкажіть час їх роботи — ми розрахуємо необхідну потужність.</p>
+    <button id="btn-intro" class="primary">Почати</button>
+  </section>
+
+  <section id="screen-devices" class="screen" hidden>
+    <h3>Виберіть пристрої</h3>
+    <p class="hint" id="dev-hint">Позначте техніку, яка буде живитися від обладнання.</p>
+    <div id="dev-list" class="list"></div>
+    <button id="btn-devices" class="primary">Готово (<span id="dev-count">0</span>)</button>
+  </section>
+
+  <section id="screen-hours" class="screen" hidden>
+    <p class="step" id="hr-step"></p>
+    <h3 id="hr-title"></h3>
+    <p class="hint">Скільки годин на добу працює пристрій без світла?</p>
+    <div id="hr-options" class="hours-grid"></div>
+  </section>
+
+  <section id="screen-result" class="screen" hidden>
+    <h3>Ваш розрахунок</h3>
+    <div id="result-list" class="list"></div>
+    <div class="total" id="result-total"></div>
+    <p class="hint">Натисніть кнопку нижче, щоб надіслати розрахунок собі в чат і перейти у наш канал.</p>
+    <button id="btn-send" class="primary">Надіслати мені результат</button>
+    <button id="btn-channel" class="secondary">Перейти до вибору обладнання (канал)</button>
+    <button id="btn-again" class="ghost">Перерахувати знову</button>
+  </section>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
